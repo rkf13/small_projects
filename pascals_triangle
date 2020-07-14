@@ -1,0 +1,25 @@
+A=int(input("How many rows?"))
+answer=[]
+for N in range(0,A):
+    if N==0:
+        answer.append([1])
+    elif N==1:
+        temp=[0,1,0]
+        new=[]
+        for J in range(0,len(temp)-1):
+            value=int(temp[J])+int(temp[J+1])
+            new.append(value)
+        answer.append(new)
+    elif N>1: 
+        temp=[]
+        temp.append(0)
+        for I in range(0,len(answer[N-1])):
+            temp.append(answer[N-1][I])
+        temp.append(0)
+        new=[]
+        for J in range(0,len(temp)-1):
+            value=int(temp[J])+int(temp[J+1])
+            new.append(value)
+        answer.append(new)
+for I in answer:
+    print(I)
