@@ -1,0 +1,21 @@
+def isprime(N):
+    prime=True
+    limit=round(N/2)+1
+    
+    if N<2:
+        print("less than 2")
+        prime=False 
+                
+    elif N==2:
+        print("two")
+        prime=True
+        
+    else:
+        print("else")
+        for n in range(2,limit):
+            
+            print(n,N%n)
+            if N%n==0:
+                prime=False
+                break
+    return prime
